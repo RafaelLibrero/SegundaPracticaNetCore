@@ -1,0 +1,12 @@
+﻿@model Comic
+
+<dt>@Model.Nombre</dt>
+<img src="@Model.Imagen" style="width: 250px; height: 250px" />    
+<dl>@Model.Descripcion</dl>
+
+<p>Confirma el borrado de este comic</p>
+
+<form asp-controller="Comics" asp-action="DeleteConfirmation"
+    asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
